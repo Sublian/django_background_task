@@ -1,4 +1,8 @@
 #### Video Tutorial for this project
+
+Author of this proyect: Andreas Jud
+GH: https://github.com/andyjud
+
 https://youtu.be/SQ4A7Q6_md8
 <br><br>
 
