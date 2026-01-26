@@ -1,82 +1,52 @@
-#### Video Tutorial for this project
+# Django Background Tasks con Celery
 
-Author of this proyect: Andreas Jud
-GH: https://github.com/andyjud
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/)
+[![Django](https://img.shields.io/badge/Django-5.0%2B-green)](https://www.djangoproject.com/)
+[![Celery](https://img.shields.io/badge/Celery-5.4%2B-orange)](https://docs.celeryq.dev/)
 
-https://youtu.be/SQ4A7Q6_md8
-<br><br>
+Este proyecto es un **fork educativo** basado en la excelente serie de videos de **Andreas Jud**: [*Background Tasks with Celery for Django*](https://youtube.com/playlist?list=PL5E1F5cTSTtRHN1WynTlFmr9ozlfZEUNI&si=EAtzgP95NYI-Fkb1) (5 videos prácticos).
 
-#### Packages
+## 🚀 Inspiración y Progreso
+- **Origen**: Andreas Jud enseña integración de Celery + Redis en Django para tareas asíncronas (emails, newsletters, etc.). Repo original de referencia: [andyjud/celery](https://github.com/andyjud/celery).
+- **Mi implementación**:
+  - ✅ **Video 1**: Envío de notificaciones por correo como tareas en background (usando Celery workers).
+  - ⏳ **Próximos**: Configuración de Redis, Celery Beat para newsletters programadas, monitoreo con Flower, y más.
+- **Objetivo**: Usar como base para aprender, luego **modificar/customizar** (e.g., integrar PostgreSQL, Docker, async views, WhatsApp notifications via APIs).
 
-Django                5.2.4<br>
-django-allauth        65.9.0<br>
-django-browser-reload 1.18.0<br>
-django-cleanup        9.0.0<br>
-django-htmx           1.23.2<br>
-pillow                11.3.0<br>
-
-<br><br>
+## 📁 Estructura del Proyecto
 
 
-#### Getting the files
-Download zip file<br> 
-or <br>
-git clone command (need git to be installed) and remove git folder afterwards
 ```
-git clone https://github.com/andyjud/django-starter.git . && rm -rf .git
-```
-<br><br><br>
-
-## Setup
-
-#### - Create Virtual Environment
-###### # Mac
-```
-python3 -m venv venv
-source venv/bin/activate
-```
-
-###### # Windows
-```
-python3 -m venv venv
-(Powershell:) .\venv\Scripts\Activate.ps1
-```
-```
-(or Command Prompt:) venv\Scripts\activate 
-(or Git Bash:) source venv/Scripts/activate
-```
-
-<br>
-
-#### - Install dependencies
-```
-pip install --upgrade pip
-pip install -r requirements.txt
-```
-
-<br>
-
-#### - Migrate to database
-```
-python manage.py migrate
-python manage.py createsuperuser
-```
-
-<br>
-
-#### - Run application
-```
-python manage.py runserver
-```
-
-<br>
-
-#### - Generate Secret Key ( ! Important for deployment ! )
-```
-python manage.py shell
-from django.core.management.utils import get_random_secret_key
-print(get_random_secret_key())
-exit()
+django_background_task/
+├── a_core/ # Lógica central (Celery config)
+├── a_home/ # App principal
+├── a_messageboard/ # Manejo de mensajes/notificaciones
+├── a_users/ # Gestión de usuarios
+├── static/ # Archivos estáticos
+├── templates/ # Templates Django
+├── manage.py
+├── requirements.txt # Incluye celery, redis, django
+└── README.md
 ```
 
 
+## 🛠️ Instalación Rápida (Local + Docker recomendado)
+1. Clona: `git clone https://github.com/Sublian/django_background_task.git`
+2. Instala: `pip install -r requirements.txt`
+3. Configura Redis (broker): Docker `docker run -p 6379:6379 redis`
+4. Migra DB: `python manage.py migrate`
+5. Worker: `celery -A a_core worker -l info`
+6. Beat (scheduler): `celery -A a_core beat -l info`
+7. Servidor: `python manage.py runserver`
+
+**Demo**: Envía email async desde `/home/send-notification/`.
+
+## 🎯 Próximas Modificaciones
+- Integrar PostgreSQL con queries optimizadas.
+- Automatización WhatsApp via Twilio/Wolfram.
+- Monitoreo con Flower + profiling (cProfile).
+- Deploy en PythonAnywhere/Docker.
+
+¡Contribuciones bienvenidas! Este repo es mi portafolio para roles backend Python/Django en Lima, PE.
+
+**Autor**: [Luis Gonzalez/[LinkedIn](https://www.linkedin.com/in/luisangelgp)] | Basado en [Andreas Jud](https://www.youtube.com/@AndreasJud).
