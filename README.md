@@ -1,3 +1,5 @@
+
+![Django Celery - Background Tasks](static/images/celery_python.png?raw=true)
 # Django Background Tasks con Celery
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/)
