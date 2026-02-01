@@ -85,6 +85,16 @@ python manage.py runserver
 source venv/bin/activate
 celery -A a_core worker -l info
 # → Connected to redis://localhost:6379/0 
+
+### Windows WSL considerations
+celery -A a_core worker -P solo 
+# para pocos workers
+
+celery -A a_core worker -P threads
+# para multiples hilos (produccion)
+
+celery -A a_core worker -P gevent
+# para grandes cantidades de tareas concurrentes
 ```
 
 ## 5. VSCode Integración

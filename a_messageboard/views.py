@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.mail import EmailMessage
 from .models import MessageBoard
 from .forms import MessageCreateForm
+from . tasks import send_email_task
 
 
 @login_required
@@ -46,13 +47,15 @@ def send_email(message):
         subject = f"New Message Posted from {message.author.profile.name}"
         body = f'{message.author.profile.name}: {message.body}\n\nVisit the messageboard to see more.'
         
-        email_thread = threading.Thread(target=send_email_thread, args=(subject, body, subscriber))
-        email_thread.start()
+        send_email_task.delay(subject, body, subscriber.email)
+#         # Using threading to send email asynchronously
+#         email_thread = threading.Thread(target=send_email_thread, args=(subject, body, subscriber))
+#         email_thread.start()
         
-def send_email_thread(subject, body, subscriber):
-    email = EmailMessage(
-        subject,
-        body,
-        to=[subscriber.email]
-    )
-    email.send()
+# def send_email_thread(subject, body, subscriber):
+#     email = EmailMessage(
+#         subject,
+#         body,
+#         to=[subscriber.email]
+#     )
+#     email.send()
