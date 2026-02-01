@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 from dotenv import load_dotenv
 import os
+
 load_dotenv()
 
 
@@ -164,7 +165,7 @@ EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 EMAIL_PORT = os.getenv("EMAIL_PORT")
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'My Message Board'
+DEFAULT_FROM_EMAIL = "My Message Board"
 ACCOUNT_EMAIL_SUBJECT_PREFIX = "[Django App] "
 
 
@@ -175,10 +176,10 @@ ACCOUNT_EMAIL_REQUIRED = True
 # ACCOUNT_SIGNUP_FIELDS = ["email*", "username*", "password1*", "password2*"]
 
 # Celery Configuration
-CELERY_BROKER_URL = 'redis://localhost:6379/0'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+CELERY_BROKER_URL = "redis://localhost:6379/0"
+CELERY_RESULT_BACKEND = "redis://localhost:6379/0"
 CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
-CELERY_ACCEPT_CONTENT = ['json']
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_RESULT_SERIALIZER = 'json'
-CELERY_TIMEZONE = 'America/Lima'
+CELERY_ACCEPT_CONTENT = ["json"]
+CELERY_TASK_SERIALIZER = "json"
+CELERY_RESULT_SERIALIZER = "json"
+CELERY_TIMEZONE = "America/Lima"
