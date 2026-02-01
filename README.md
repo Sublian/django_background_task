@@ -1,7 +1,9 @@
 
 ![Django Celery - Background Tasks](static/images/celery_python.png?raw=true)
+
 # Django Background Tasks con Celery
 
+![CI](https://github.com/Sublian/django_background_task/workflows/Django%20CI%20Tests/badge.svg)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/)
 [![Django](https://img.shields.io/badge/Django-5.0%2B-green)](https://www.djangoproject.com/)
 [![Celery](https://img.shields.io/badge/Celery-5.4%2B-orange)](https://docs.celeryq.dev/)
