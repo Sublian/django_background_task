@@ -8,11 +8,14 @@ click-didyoumean==0.3.1
 click-plugins==1.1.1.2
 click-repl==0.3.0
 colorama==0.4.6
+cron_descriptor==2.0.6
 Django==5.2.4
 django-allauth==65.9.0
 django-browser-reload==1.18.0
+django-celery-beat==2.8.1
 django-cleanup==9.0.0
 django-htmx==1.23.2
+django-timezone-field==7.2.1
 django_celery_results==2.6.0
 dotenv==0.9.9
 flower==2.0.1
@@ -25,6 +28,7 @@ pillow==11.3.0
 platformdirs==4.5.1
 prometheus_client==0.24.1
 prompt_toolkit==3.0.52
+python-crontab==3.3.0
 python-dateutil==2.9.0.post0
 python-dotenv==1.2.1
 pytokens==0.4.0
@@ -33,6 +37,7 @@ redis==7.1.0
 six==1.17.0
 sqlparse==0.5.5
 tornado==6.5.4
+typing_extensions==4.15.0
 tzdata==2025.3
 tzlocal==5.3.1
 vine==5.1.0

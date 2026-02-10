@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     # Third party
     "django_browser_reload",
     "django_celery_results",
+    "django_celery_beat",
 ]
 
 SITE_ID = 1

@@ -1,7 +1,7 @@
 import threading
 from django.contrib import messages
 from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.core.mail import EmailMessage
 from .models import MessageBoard
 from .forms import MessageCreateForm
@@ -63,3 +63,10 @@ def send_email(message):
 #         to=[subscriber.email]
 #     )
 #     email.send()
+
+def is_staff(user):
+    return user.is_staff
+
+@user_passes_test(is_staff)
+def newsletter(request):
+    return render(request, "a_messageboard/newsletter.html")
