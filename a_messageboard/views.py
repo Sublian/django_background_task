@@ -64,8 +64,10 @@ def send_email(message):
 #     )
 #     email.send()
 
+
 def is_staff(user):
     return user.is_staff
+
 
 @user_passes_test(is_staff)
 def newsletter(request):
