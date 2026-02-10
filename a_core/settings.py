@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     "a_messageboard",
     # Third party
     "django_browser_reload",
+    "django_celery_results",
 ]
 
 SITE_ID = 1
@@ -169,17 +170,19 @@ DEFAULT_FROM_EMAIL = "My Message Board"
 ACCOUNT_EMAIL_SUBJECT_PREFIX = "[Django App] "
 
 
-ACCOUNT_AUTHENTICATION_METHOD = "email"
-ACCOUNT_EMAIL_REQUIRED = True
+# ACCOUNT_AUTHENTICATION_METHOD = "email"
+# ACCOUNT_EMAIL_REQUIRED = True
 
 # ACCOUNT_LOGIN_METHODS = {"email", "username"}
 # ACCOUNT_SIGNUP_FIELDS = ["email*", "username*", "password1*", "password2*"]
 
 # Celery Configuration
 CELERY_BROKER_URL = "redis://localhost:6379/0"
-CELERY_RESULT_BACKEND = "redis://localhost:6379/0"
+# CELERY_RESULT_BACKEND = "redis://localhost:6379/0"
 CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
 CELERY_ACCEPT_CONTENT = ["json"]
 CELERY_TASK_SERIALIZER = "json"
 CELERY_RESULT_SERIALIZER = "json"
 CELERY_TIMEZONE = "America/Lima"
+CELERY_RESULT_BACKEND = "django-db"
+CELERY_RESULT_EXTENDED = True
