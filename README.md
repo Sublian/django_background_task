@@ -7,6 +7,8 @@
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/)
 [![Django](https://img.shields.io/badge/Django-5.0%2B-green)](https://www.djangoproject.com/)
 [![Celery](https://img.shields.io/badge/Celery-5.4%2B-orange)](https://docs.celeryq.dev/)
+[![Coverage](https://codecov.io/gh/Sublian/django_background_task/branch/main/graph/badge.svg)](https://codecov.io/gh/Sublian/django_background_task)
+[![CI](https://github.com/Sublian/django_background_task/actions/workflows/ci.yml/badge.svg)](https://github.com/Sublian/django_background_task/actions/workflows/ci.yml)
 
 Este proyecto es un **fork educativo** basado en la excelente serie de videos de **Andreas Jud**: [*Background Tasks with Celery for Django*](https://youtube.com/playlist?list=PL5E1F5cTSTtRHN1WynTlFmr9ozlfZEUNI&si=EAtzgP95NYI-Fkb1) (5 videos prácticos).
 
